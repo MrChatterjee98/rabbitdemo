@@ -1,0 +1,19 @@
+package com.rabbit;
+
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.TopicExchange;
+import org.springframework.context.annotation.Configuration;
+
+
+
+@Configuration
+public class ProducerConfig {
+	
+	public Queue demo() {
+		return new Queue("demo");
+	}
+	
+	public TopicExchange demoExchange() {
+		return new TopicExchange("demo_exchange");
+	}
+}

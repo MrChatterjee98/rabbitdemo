@@ -1,0 +1,18 @@
+package com.rabbit;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+
+public class Porducer {
+	private final static String QUEUE_NAME = "demo";
+	
+	public void publishMessage(String message) throws RuntimeException{
+		ConnectionFactory cf= new ConnectionFactory();
+		cf.setHost("localhost");
+		cf.setPort(5672);
+		Connection cn = cf.newConnection();
+		Channel ch = cn.createChannel();
+	}
+	
+}

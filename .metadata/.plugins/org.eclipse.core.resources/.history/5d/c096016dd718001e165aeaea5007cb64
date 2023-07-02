@@ -1,0 +1,6 @@
+package com.rabbit;
+
+
+public class Porducer {
+	private final static String QUEUE_NAME = "hello";
+}

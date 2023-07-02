@@ -1,0 +1,18 @@
+package com.rabbit;
+
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.websocket.server.PathParam;
+
+@RestController
+public class RabbitController {
+	@GetMapping("/bar")
+	public ResponseEntity<?> getMessageAndPublish(@RequestParam s){
+		return new ResponseEntity<>(HttpStatusCode.valueOf(200));
+	}
+	
+}

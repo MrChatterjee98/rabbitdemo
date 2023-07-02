@@ -1,0 +1,9 @@
+package com.rabbit;
+
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
+
+public class Main {
+	public static void main(String[] args) throws Exception{
+		new Porducer().publishMessage("Hello world from app");
+	}
+}

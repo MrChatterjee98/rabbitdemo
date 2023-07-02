@@ -1,0 +1,13 @@
+package com.rabbit;
+
+import org.springframework.context.annotation.Configuration;
+
+import com.rabbitmq.client.AMQP.Queue;
+
+@Configuration
+public class ProducerConfig {
+	
+	public Queue hello() {
+		return 
+	}
+}

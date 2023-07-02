@@ -1,0 +1,23 @@
+package com.rabbit;
+
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+
+public class Porducer {
+	private final static String QUEUE_NAME = "demo";
+	private final static String EXCHANGE = "demo_excahnge";
+	public void publishMessage(String message) throws RuntimeException, IOException, TimeoutException{
+		ConnectionFactory cf= new ConnectionFactory();
+		cf.setHost("localhost");
+		cf.setPort(5672);
+		Connection cn = cf.newConnection();
+		Channel ch = cn.createChannel();
+		ch.queueDeclare(QUEUE_NAME,false,false,false,null);
+		ch.basicPublish(null, QUEUE_NAME,null, message.getBytes());
+	}
+	
+}
